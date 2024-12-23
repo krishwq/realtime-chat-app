@@ -10,7 +10,7 @@ body {
     background-image: linear-gradient(to bottom right, #50727b, #7ba083);
     width: 100vw;
     overflow: hidden;
-    font-family: Arial, sans-serif;
+    font-family: auto;
 }
 
 /* Container styling */
@@ -132,7 +132,7 @@ body {
 
 .welcome {
     border-radius: 15px;
-    width: 270px;
+    width: 283px;
     margin: 5px auto;
     padding: 8px;
     display: flex;
@@ -224,6 +224,7 @@ input {
     border-radius: 20px;
     width: 90%;
     margin-left: 10px;
+    font-family: serif;
 }
 
 .bottom{
