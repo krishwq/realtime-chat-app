@@ -29,6 +29,20 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(171, 172, 170);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5e5d5d;
+}
+
 /* Navigation bar */
 .nav {
     display: flex;
@@ -43,6 +57,9 @@ body {
     margin: 0 20px;
     font-size: 35px;
     color: #00a40b;
+}
+.chat {
+    width: 100%;
 }
 
 .name {
@@ -68,6 +85,7 @@ body {
 }
 
 #numberOfParticipant {
+    aspect-ratio: 1/1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,9 +94,10 @@ body {
     font-size: small;
     padding: 2px;
     min-width: 25px;
+    margin-left: -10px;
     border-radius: 50%;
     border: 2px solid white;
-    margin-left: -10px;
+    z-index: 5;
 }
 
 /* Chat container */
@@ -93,6 +112,24 @@ body {
     padding-top: 10px;
 }
 
+.right {
+    margin: 5px 10px 5px auto;
+    max-width: 50%;
+    min-width: 50px;
+    float: right;
+    border-radius: 10px 0 10px 10px;
+}
+
+.center {
+    margin: 5px auto;
+    border-radius: 20px;
+    max-width: 70%;
+    padding: 2px 5px;
+    justify-content: center;
+    font-size: small;
+}
+
+
 .welcome {
     border-radius: 15px;
     width: 270px;
@@ -104,6 +141,41 @@ body {
     border: 1px solid black;
     font-weight: 500;
     justify-content: center;
+}
+
+.message {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    background-color: #eefcef;
+    border: 1px solid black;
+    font-weight: 540;
+    word-wrap: break-word;
+    flex-direction: column;
+}
+
+.left {
+    margin: 5px auto 5px 10px;
+    max-width: 50%;
+    min-width: 50px;
+    float: left;
+    border-radius: 0 10px 10px 10px;
+}
+
+.chatname {
+    width: 100%;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: black;
+}
+
+.time {
+    font-size: 0.8em;
+    color: #5e5d5d;
+    width: 100%;
+    display: flex;
+    justify-content: end;
 }
 
 /* Input form */
@@ -118,18 +190,6 @@ body {
     justify-content: space-between;
 }
 
-input {
-    outline: none;
-    height: 20px;
-    border: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    background-color: #35374B;
-    color: #f1f8f2;
-    border-radius: 20px;
-    width: 90%;
-    margin-left: 10px;
-}
 
 .btn {
     aspect-ratio: 1/1;
@@ -146,6 +206,46 @@ input {
 
 .btn:hover {
     background-color: #474957;
+}
+
+.sendimg {
+    height: 60%;
+    width: 60%;
+}
+
+input {
+    outline: none;
+    height: 40px;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    background-color: #35374B;
+    color: #f1f8f2;
+    border-radius: 20px;
+    width: 90%;
+    margin-left: 10px;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 60px;
+    right: 15px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #636363;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    z-index: 100;
+    color: white;
+}
+.bottom i{
+    font-weight: 700;
+    font-size: 15px;
 }
 
 /* Recording UI */
@@ -181,44 +281,10 @@ input {
     font-size: 18px;
     color: #e7f0e0;
 }
-
-/* Scroll to bottom button */
-.bottom {
-    position: absolute;
-    bottom: 60px;
-    right: 15px;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background-color: #636363;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    z-index: 100;
-    color: white;
+.myaudio{
+    max-width: 100%;
 }
 
-.bottom i {
-    font-weight: 700;
-    font-size: 15px;
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-    width: 3px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgb(171, 172, 170);
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #5e5d5d;
-}
 
 /* Responsive styles */
 @media screen and (max-width: 600px) {
