@@ -141,6 +141,7 @@ body {
     border: 1px solid black;
     font-weight: 500;
     justify-content: center;
+    text-align: center;
 }
 
 .message {
