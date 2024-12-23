@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkUp-Seamlessly connect, chat, and collaborate anytime, anywhere.</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <script defer src="https://realtime-chat-server-3c8b.onrender.com/socket.io/socket.io.js"></script>
+    <script defer src="js/client.js"></script>
+    <script src="https://kit.fontawesome.com/d2ed129228.js" crossorigin="anonymous"></script>
+    <script>
+        function updateViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        updateViewportHeight();
+        window.addEventListener('resize', updateViewportHeight);
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <i class="fa-brands fa-whatsapp icon" ></i>
+            <div class="name" id="nav-name"></div>
+            <div class="participant"><span><i class="fa-solid fa-circle-user user"></i></span ><span id="numberOfParticipant"></span></div>
+        </div>
+        <div class="chatcontainer">
+            <div class="welcome">Welcome to LinkUp-Seamlessly connect, chat, and collaborate anytime, anywhere.</div>
+        </div>
+        <form action="#" id="send-container" class="sendcont"">
+            <input type="text" name="message" id="message" placeholder="Message">
+            <button class="btn" type="submit" id="button" onclick="startRecording()"></button>
+        </form>
+        <div class="recording" id="record">
+            <button class="bin" onclick="deleteAudio()"><i class="fa-solid fa-trash-can"></i></button>
+            <span id="timer">00:00</span>
+            <button class="stop" id="stopRecording"><i class="fa-solid fa-stop" style="color: #fe0606;"></i></button>
+        </div>
+        <button class="bottom" id="bottom"><i class="fa-solid fa-angles-down"></i></button>
+    </div>
+</body>
+</html>

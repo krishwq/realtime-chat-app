@@ -1,0 +1,256 @@
+/* Resetting default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: calc(var(--vh, 1vh) * 100); /* Dynamically calculated height */
+    background-image: linear-gradient(to bottom right, #50727b, #7ba083);
+    width: 100vw;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Container styling */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: calc(var(--vh, 1vh) * 95); /* Adjusted height for dynamic viewport */
+    width: 60vw;
+    background-image: url(chatbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation bar */
+.nav {
+    display: flex;
+    background-color: #35374B;
+    height: 10%;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    align-items: center;
+}
+
+.icon {
+    margin: 0 20px;
+    font-size: 35px;
+    color: #00a40b;
+}
+
+.name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 60%;
+    color: #eefcef;
+    font-size: 20px;
+}
+
+.participant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+}
+
+.user {
+    color: rgba(111, 129, 106, 0.6);
+    font-size: 32px;
+}
+
+#numberOfParticipant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: small;
+    padding: 2px;
+    min-width: 25px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: -10px;
+}
+
+/* Chat container */
+.chatcontainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: calc(80% - 10px);
+    padding-top: 10px;
+}
+
+.welcome {
+    border-radius: 15px;
+    width: 270px;
+    margin: 5px auto;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    background-color: #d8f1c4;
+    border: 1px solid black;
+    font-weight: 500;
+    justify-content: center;
+}
+
+/* Input form */
+.sendcont {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    height: 10%;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input {
+    outline: none;
+    height: 20px;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    background-color: #35374B;
+    color: #f1f8f2;
+    border-radius: 20px;
+    width: 90%;
+    margin-left: 10px;
+}
+
+.btn {
+    aspect-ratio: 1/1;
+    margin: 0 10px;
+    border: none;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #35374B;
+}
+
+.btn:hover {
+    background-color: #474957;
+}
+
+/* Recording UI */
+.recording {
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 60px;
+    color: #e7f0e0;
+    background-color: #35374B;
+    height: 30px;
+    padding: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    width: 150px;
+}
+
+.bin, .stop {
+    font-size: 20px;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    border: none;
+    outline: none;
+    background-color: #555268;
+    cursor: pointer;
+}
+
+.bin {
+    font-size: 18px;
+    color: #e7f0e0;
+}
+
+/* Scroll to bottom button */
+.bottom {
+    position: absolute;
+    bottom: 60px;
+    right: 15px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #636363;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    z-index: 100;
+    color: white;
+}
+
+.bottom i {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(171, 172, 170);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5e5d5d;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        height: calc(var(--vh, 1vh) * 100); /* Use dynamic viewport height */
+        border-radius: 0;
+    }
+
+    .nav {
+        height: 50px;
+        border-radius: 0;
+    }
+
+    .chatcontainer {
+        height: calc(100% - 110px); /* Adjusted for nav and input bar */
+        width: 100vw;
+    }
+
+    .sendcont {
+        height: 50px;
+        width: 100vw;
+    }
+
+    body {
+        background-image: url(chatbg.jpg) !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .participant {
+        right: 15px;
+    }
+}
