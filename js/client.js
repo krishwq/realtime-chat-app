@@ -65,7 +65,7 @@ message.addEventListener('input', change);
 // Function to toggle the button's disabled state
 const toggleButton = () => {
     if (message.value.trim() === "") {
-        button.innerHTML = '<i class="fa-solid fa-align-center fa-rotate-90" style="color: #06ac11;font-size:24px"></i>';
+        button.innerHTML = '<i class="fa-solid fa-microphone" style="color: #06ac11;font-size:22px"></i>';
     } else {
         button.innerHTML='<img src="send.png" alt="send" class="sendimg">';
     }
@@ -157,7 +157,12 @@ navigator.mediaDevices.getUserMedia({ audio: true })
                 <audio src="${audioUrl}" controls class="myaudio"></audio>
                 <div class="time">${formattedTime}</div>
                 </div>`
+                messagecontainer.scrollTo({
+                    behavior:'smooth',
+                    top: messagecontainer.scrollHeight
+                });
     };
+    
     })
     .catch((error) => {
     console.error("Error accessing microphone:", error);
@@ -250,5 +255,9 @@ socket.on('receive-audio', (data) => {
     <div class="time">${formattedTime}</div>
     </div>`;
     audio.play();
+    messagecontainer.scrollTo({
+        behavior:'smooth',
+        top: messagecontainer.scrollHeight
+    });
     });
 
